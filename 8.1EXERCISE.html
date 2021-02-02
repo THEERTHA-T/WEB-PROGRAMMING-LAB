@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>exercise 8</title>
+  <style media="screen">
+  th
+  {
+    font-size: 20px;
+    text-align: left;
+  }
+  input[type=text], input[type=password],input[type=email]
+  {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  #btn
+  {
+    font-size: 95%;
+    border: none;
+    background-color:green;
+    color:white;
+    width:100px;
+    height:35px
+  }
+  h1
+  {
+    color: white;
+    background-color: black;
+    margin-left: 37%;
+    margin-right: 36%;
+  }
+  </style>
+</head>
+<body>
+  <br><br>
+  <form name="form1" action="" method="post" onsubmit="return sub()">
+    <h1 align="center"><u>REGISTRATION FORM</u></h1>
+    <br>
+    <table align="center" width="25%">
+      <tr>
+        <th>First Name </th>
+        <td><input type="text" name="fn" placeholder="First Name"></td>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <td><input type="text" name="ln" placeholder="Last Name"></td>
+      </tr>
+      <tr>
+        <th>Email ID</th>
+        <td><input type="email" name="email" placeholder="Email ID"></td>
+      </tr>
+      <tr>
+        <th>Phone Number</th>
+        <td><input type="text" name="phn" placeholder="Phone Number"></td>
+      </tr>
+      <tr>
+        <th>Password</th>
+        <td><input type="password" name="pswd" placeholder="Minimum 8 Characters"></td>
+      </tr>
+      <tr>
+        <th>Confirm Password</th>
+        <td><input type="password" name="cpswd" placeholder="Re-type Password"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="checkbox" name="cb">I hereby agree all the terms and conditions</td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+    </tr>
+    <tr>
+      <br>
+      <td> <input type="reset" value="CLEAR" id="btn" style="background-color:red;"></td>
+      <td align="right"> <input type="submit" id="btn" value="REGISTER"></td>
+    </tr>
+  </table>
+</form>
+<script type="text/javascript">
+function sub()
+{
+  fname=document.form1.fn.value;
+  lname=document.form1.ln.value;
+  emailid=document.form1.email.value;
+  phno=document.form1.phn.value;
+  pp=document.form1.pswd.value;
+  cp=document.form1.cpswd.value;
+  cc=document.form1.cb.checked;
+  if(fname==""||lname==""||emailid==""||pp==""||cp==""||phno==""||cc=="")
+  {
+    alert("Mandatory Fields Missing..!");
+    return false;
+  }
+  else  if(!isNaN(fname))
+  {
+    alert("Please Enter Only Characters For Name");
+    return false;
+  }
+  else if(isNaN(phno)||phno.length!=10)
+  {
+    alert("Please Enter Valid Phone Number..!");
+    return false;
+  }
+  else if (pp.length<8)
+  {
+    alert("Password must contain atleast 8 Characters..!");
+    return false;
+  }
+  else if(pp!=cp)
+  {
+    alert("password mismatch..!")
+    return false;
+  }
+  else
+  {
+    alert("submitted successfully..!");
+  }
+}
+</script>
+</body>
+</html>
