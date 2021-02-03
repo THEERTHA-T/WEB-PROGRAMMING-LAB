@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>exercise 10</title>
+<style media="screen">
+  img
+  {
+    margin-left:30%;
+  }
+</style>
+</head>
+<body>
+  <h1 align="center"><u>EVENT HANDLING</u></h1>
+  <br><br>
+    <img src="10.1img.jpg" id="img1" height="500" width="700">
+    <br><br>
+    <h1 id="txt1" align="center">Mouse Over To The Text</h1>
+  <script type="text/javascript">
+    document.getElementById('img1').addEventListener("mouseover",img_mouseover);
+    document.getElementById('img1').addEventListener("mouseout",img_mouseout);
+    document.getElementById('txt1').addEventListener("mouseover",txt_mouseover);
+    document.getElementById('txt1').addEventListener("mouseout",txt_mouseout);
+    function img_mouseover()
+    {
+      document.getElementById('img1').src="10.2img.jpg";
+    }
+    function img_mouseout()
+    {
+      document.getElementById('img1').src="10.1img.jpg";
+    }
+    function txt_mouseover()
+    {
+      document.getElementById('txt1').innerHTML="Text Changed";
+    }
+    function txt_mouseout()
+    {
+      document.getElementById('txt1').innerHTML="Mouse Over To The Text";
+    }
+  </script>
+</body>
+</html>
