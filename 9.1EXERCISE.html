@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>exercise 9</title>
+  <style>
+    #btn
+    {
+      font-size: 95%;
+      background-color:black;
+      color:white;
+      width:100px;
+      height:45px;
+    }
+    mark
+    {
+      font-size:45px;
+    }
+  </style>
+</head>
+<body>
+  <p align="center">
+    <br>
+    <mark>CHANGING BACKGROUND COLOR</mark>
+    <br><br><br>
+    <input type="button" id="btn" value="CLICK ME">
+  </p>
+  <script type="text/javascript">
+    document.getElementById("btn").addEventListener("click", change_color);
+    function change_color()
+    {
+      var clr = '#' + Math.floor(Math.random() * 16777215).toString(16);
+      document.body.style.background = clr;
+    }
+  </script>
+</body>
+</html>
